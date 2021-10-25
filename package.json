@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "A testbed for analysing SEC stock market and company data",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "start": "node main.js",
-    "test": "node main.js C:\\Users\\sajmc\\OneDrive\\Documents\\Projects"
+    "test": "node main.js C:\\Users\\sajmc\\OneDrive\\Documents\\Projects\\StockmarketAPI\\R&D\\testCompanyFacts"
   },
   "repository": {
     "type": "git",
