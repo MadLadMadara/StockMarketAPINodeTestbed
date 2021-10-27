@@ -4,19 +4,33 @@ import fs from 'fs';
 
 
 // gloabals
-const dir = process.argv.slice(2)[0];
+//const dir = process.argv.slice(2)[0];
 
-const dirT = "C:\\Users\\sajmc\\OneDrive\\Documents\\Projects\\StockmarketAPI\\R&D\\testCompanyFacts"
+const dir = "C:\\Users\\sajmc\\OneDrive\\Documents\\Projects\\StockmarketAPI\\R&D\\testCompanyFacts"
 
 // check if dir exists
-if(dirT.length > 0){
+if(dir.length > 0){
     try {
-        const files = fs.readdirSync(dirT);
-    
+        const files = fs.readdirSync(dir);
         // files object contains all files names
         // log them on console
         files.forEach(file => {
-            console.log(file);
+            let fullFilePath = dir + "\\" + file;
+            console.log(fullFilePath);
+
+            try {
+
+                const data = fs.readFileSync(fullFilePath, 'utf8');
+
+                // parse JSON string to JSON object
+                const JSONdata = JSON.parse(data);
+
+                // print all databases
+                console.log(JSONdata);
+
+            } catch (err) {
+                console.log(`Error reading file from disk: ${err}`);
+            }
         });
     
     } catch (err) {
