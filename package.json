@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/MadLadMadara/StockMarketAPINodeTestbed/issues"
   },
-  "homepage": "https://github.com/MadLadMadara/StockMarketAPINodeTestbed#readme"
+  "homepage": "https://github.com/MadLadMadara/StockMarketAPINodeTestbed#readme",
+  "dependencies": {
+    "mongose": "0.0.2-security"
+  }
 }

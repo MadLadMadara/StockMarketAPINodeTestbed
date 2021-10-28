@@ -4,4 +4,6 @@ let reader = () => {
 }
 
 
-export default reader;
+export default {
+    reader
+};
