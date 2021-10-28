@@ -1,5 +1,4 @@
 // imports
-import reader from './helpers.js';
 import fs from 'fs';
 
 
@@ -26,7 +25,7 @@ if(dir.length > 0){
                 const JSONdata = JSON.parse(data);
 
                 // print all databases
-                console.log(JSONdata);
+                console.log(JSONdata.facts.dei.EntityCommonStockSharesOutstanding.units.shares);
 
             } catch (err) {
                 console.log(`Error reading file from disk: ${err}`);
