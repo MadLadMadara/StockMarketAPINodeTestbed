@@ -16,16 +16,13 @@ if(dir.length > 0){
         files.forEach(file => {
             let fullFilePath = dir + "\\" + file;
             console.log(fullFilePath);
-
             try {
-
                 const data = fs.readFileSync(fullFilePath, 'utf8');
-
                 // parse JSON string to JSON object
                 const JSONdata = JSON.parse(data);
 
                 // print all databases
-                console.log(JSONdata.facts.dei.EntityCommonStockSharesOutstanding.units.shares);
+                console.log(JSONdata.facts);
 
             } catch (err) {
                 console.log(`Error reading file from disk: ${err}`);

@@ -14,11 +14,25 @@ import mongoose from 'mongoose'
 const companyFactsSchema = new mongoose.Schema({
   cik: {
     type: Number,
-    required: 'Company CIK Number is required'
+    required: 'Company CIK Number is required',
+    unique: true
+  },
+  symbol: {
+    type: String,
+    required: 'Company ticker symbol is required',
+    unique: true
   },
   entityName: {
     type: String,
     required: 'Company name is required'
+  },
+  updated: {
+    type: Date, 
+    default: Date.now
+  },
+  created: {
+    type: Date,
+    default: Date.now
   }
 })
 
