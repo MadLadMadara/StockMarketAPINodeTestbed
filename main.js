@@ -22,7 +22,7 @@ if(dir.length > 0){
                 const JSONdata = JSON.parse(data);
 
                 // print all databases
-                console.log(JSONdata.facts);
+                console.log(JSONdata);
 
             } catch (err) {
                 console.log(`Error reading file from disk: ${err}`);
