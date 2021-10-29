@@ -36,4 +36,4 @@ const companyFactsSchema = new mongoose.Schema({
   }
 })
 
-export default mongoose.model('Product', companyFactsSchema)
+export default mongoose.model('CompanyFacts', companyFactsSchema)

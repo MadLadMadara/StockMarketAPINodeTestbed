@@ -1,5 +1,5 @@
 /**
- * @fileoverview Mongoose schema for the 'record' subdocument
+ * @fileoverview Mongoose schema for the 'recordSchema' subdocument
  * @exports mongoose.model
  * @author Sam McRuvie
  */
@@ -7,11 +7,11 @@
 import mongoose from 'mongoose'
 
 /**
- * @class record
+ * @class recordSchema
  * @description Mongoose schema for 'record' subdocument
  * @type mongoose.Schema
  */
-const record = new mongoose.Schema({
+const recordSchema = new mongoose.Schema({
     start: {
         type: Date,
         require: "Start date is required for all records"
@@ -50,4 +50,4 @@ const record = new mongoose.Schema({
     }
 })
 
-export default mongoose.model('Product', record)
+export default mongoose.model('Record', recordSchema)
