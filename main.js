@@ -1,6 +1,8 @@
 // imports
 import fs from 'fs';
 
+import CompanyFacts from './models/facts/companyFacts.models.js';
+
 
 // gloabals
 //const dir = process.argv.slice(2)[0];
@@ -20,9 +22,14 @@ if(dir.length > 0){
                 const data = fs.readFileSync(fullFilePath, 'utf8');
                 // parse JSON string to JSON object
                 const JSONdata = JSON.parse(data);
+                //use databse scheema
+                let company = new CompanyFacts({
+                    cik: JSONdata.cik,
+                    entityName: JSONdata.entityName,
+                    ifrsfull: JSONdata.facts['ifrs-full']
 
-                // print all databases
-                console.log(JSONdata);
+                });
+                console.log(company);
 
             } catch (err) {
                 console.log(`Error reading file from disk: ${err}`);

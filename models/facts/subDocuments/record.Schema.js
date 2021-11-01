@@ -50,4 +50,4 @@ const recordSchema = new mongoose.Schema({
     }
 })
 
-export default mongoose.model('Record', recordSchema)
+export default recordSchema; 

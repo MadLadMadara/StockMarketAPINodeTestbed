@@ -5,6 +5,7 @@
  */
 // ----Mongoose package/imports
 import mongoose from 'mongoose'
+import ifrsFullSchema from './subDocuments/ifrsFull.Schema.js'
 
 /**
  * @class companyFacts
@@ -19,7 +20,6 @@ const companyFactsSchema = new mongoose.Schema({
   },
   symbol: {
     type: String,
-    required: 'Company ticker symbol is required',
     unique: true
   },
   entityName: {
@@ -33,6 +33,9 @@ const companyFactsSchema = new mongoose.Schema({
   created: {
     type: Date,
     default: Date.now
+  },
+  ifrsfull: {
+    type: ifrsFullSchema
   }
 })
 
