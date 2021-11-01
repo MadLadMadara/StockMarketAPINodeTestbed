@@ -15,7 +15,8 @@ import ifrsFullSchema from "./subDocuments/ifrsFull.Schema.js"
  */
 const companyFactsSchema = new mongoose.Schema({
   "cik": {
-    "type": "Number"
+    "type": "Number",
+    unique: true
   },
   "entityName": {
     "type": "String"
