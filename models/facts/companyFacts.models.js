@@ -6,6 +6,7 @@
 // ----Mongoose package/imports
 import mongoose from 'mongoose'
 import usgaapSchema from './subDocuments/usgaap.Schema.js'
+import ifrsFullSchema from "./subDocuments/ifrsFull.Schema.js"
 
 /**
  * @class companyFacts
@@ -54,6 +55,9 @@ const companyFactsSchema = new mongoose.Schema({
     },
     "USgaap": {
       type: usgaapSchema
+    },
+    "ifrsFull":{
+      type: ifrsFullSchema
     }
   }
 })

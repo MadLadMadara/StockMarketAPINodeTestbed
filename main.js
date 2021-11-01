@@ -28,10 +28,11 @@ if(dir.length > 0){
                     entityName: JSONdata.entityName,
                     facts: {
                       dei: JSONdata.facts.dei,
-                      USgaap: JSONdata.facts['us-gaap']
+                      USgaap: JSONdata.facts['us-gaap'],
+                      ifrsFull: JSONdata.facts['ifrs-full']
                     } 
                 });
-                console.log(company.facts.USgaap);
+                console.log(company.facts.ifrsFull.Accruals.units.USD);
 
             } catch (err) {
                 console.log(`Error reading file from disk: ${err}`);
