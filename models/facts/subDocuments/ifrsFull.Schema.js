@@ -13,6 +13,7 @@ import recordSchema from './record.Schema.js'
  * @description Mongoose schema for 'ifrsFullSchema' subdocument
  * @type mongoose.Schema
  */
+
 const ifrsFullSchema = new mongoose.Schema({
     Accruals: [recordSchema],
     AccumulatedOtherComprehensiveIncome: [recordSchema],

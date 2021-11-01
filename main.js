@@ -24,12 +24,14 @@ if(dir.length > 0){
                 const JSONdata = JSON.parse(data);
                 //use databse scheema
                 let company = new CompanyFacts({
-                    cik: JSONdata.cik,
+                    cik:JSONdata.cik,
                     entityName: JSONdata.entityName,
-                    ifrsfull: JSONdata.facts['ifrs-full']
-
+                    facts: {
+                      dei: JSONdata.facts.dei,
+                      USgaap: JSONdata.facts['us-gaap']
+                    } 
                 });
-                console.log(company);
+                console.log(company.facts.USgaap);
 
             } catch (err) {
                 console.log(`Error reading file from disk: ${err}`);

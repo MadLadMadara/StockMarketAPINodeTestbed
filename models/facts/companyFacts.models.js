@@ -5,7 +5,7 @@
  */
 // ----Mongoose package/imports
 import mongoose from 'mongoose'
-import ifrsFullSchema from './subDocuments/ifrsFull.Schema.js'
+import usgaapSchema from './subDocuments/usgaap.Schema.js'
 
 /**
  * @class companyFacts
@@ -13,29 +13,48 @@ import ifrsFullSchema from './subDocuments/ifrsFull.Schema.js'
  * @type mongoose.Schema
  */
 const companyFactsSchema = new mongoose.Schema({
-  cik: {
-    type: Number,
-    required: 'Company CIK Number is required',
-    unique: true
+  "cik": {
+    "type": "Number"
   },
-  symbol: {
-    type: String,
-    unique: true
+  "entityName": {
+    "type": "String"
   },
-  entityName: {
-    type: String,
-    required: 'Company name is required'
-  },
-  updated: {
-    type: Date, 
-    default: Date.now
-  },
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  ifrsfull: {
-    type: ifrsFullSchema
+  "facts": {
+    "dei": {
+      "EntityCommonStockSharesOutstanding": {
+        "label": {
+          "type": "String"
+        },
+        "description": {
+          "type": "String"
+        },
+        "units": {
+          "shares": {
+            "type": [
+              "Mixed"
+            ]
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "label": {
+          "type": "String"
+        },
+        "description": {
+          "type": "String"
+        },
+        "units": {
+          "USD": {
+            "type": [
+              "Mixed"
+            ]
+          }
+        }
+      }
+    },
+    "USgaap": {
+      type: usgaapSchema
+    }
   }
 })
 
