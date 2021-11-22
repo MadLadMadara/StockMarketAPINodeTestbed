@@ -53,12 +53,14 @@ if(dir.length > 0){
         });
         console.log("File reading compleated")
         console.log("DB Date uploaded started")
-        CompanyFacts.insertMany(
+        await CompanyFacts.insertMany(
             allCompanyFacts
         ).then(()=>{
             console.log("DB Date uploaded compleated")
         }).catch((error)=>{
             console.log(error);
+        }).finally(()=>{
+            process.exit(1); 
         });
     } catch (err) {
         console.log(err);
